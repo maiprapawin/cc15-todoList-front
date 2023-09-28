@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import Authenticated from "../components/Authenticated";
 
 const router =
   // createBrowserRouter = fn ที่ import มาจาก react router dom
@@ -34,7 +35,14 @@ const router =
         // { path: "login", element: <h1>Login Page</h1> },
         // { path: "register", element: <h1>Register Page</h1> },
 
-        { path: "", element: <HomePage /> },
+        {
+          path: "",
+          element: (
+            <Authenticated>
+              <HomePage />
+            </Authenticated>
+          ),
+        },
         { path: "login", element: <LoginPage /> },
         { path: "register", element: <RegisterPage /> },
       ],

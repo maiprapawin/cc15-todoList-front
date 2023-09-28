@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import AuthContextProvider from "./contexts/AuthContext.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  // <React.StrictMode>
+  <AuthContextProvider>
     <App />
-  </React.StrictMode>,
-)
+  </AuthContextProvider>
+  // </React.StrictMode>
+);
+
+// มี prop ตัวนึงเป็น children ที่เรียกว่า <App />
